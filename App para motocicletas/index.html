@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aplicación web para gestionar la disponibilidad y asignación horaria de una flota de ocho motocicletas.">
+  <title>App para motocicletas | Gestión de disponibilidad</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/gestion.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Panel de gestión de flota</p>
+      <h1>App para motocicletas</h1>
+      <p class="hero__description">
+        Asigna y libera motocicletas por franja horaria. Pulsa una hora disponible para reservar una moto y vuelve a pulsarla para liberarla.
+      </p>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="summary" aria-label="Resumen de disponibilidad">
+      <article class="summary-card">
+        <span class="summary-card__label">Total</span>
+        <strong id="totalMotos" class="summary-card__value">8</strong>
+        <span class="summary-card__detail">motocicletas</span>
+      </article>
+      <article class="summary-card">
+        <span class="summary-card__label">Disponibles</span>
+        <strong id="motosDisponibles" class="summary-card__value">8</strong>
+        <span class="summary-card__detail">listas para asignar</span>
+      </article>
+      <article class="summary-card">
+        <span class="summary-card__label">En uso</span>
+        <strong id="motosEnUso" class="summary-card__value">0</strong>
+        <span class="summary-card__detail">asignaciones activas</span>
+      </article>
+    </section>
+
+    <section class="panel" aria-labelledby="horario-title">
+      <div class="panel__heading">
+        <div>
+          <p class="eyebrow">Horario operativo</p>
+          <h2 id="horario-title">Selecciona una franja horaria</h2>
+        </div>
+        <div class="legend" aria-label="Leyenda de estados">
+          <span class="legend__item"><span class="legend__dot legend__dot--free"></span> Disponible</span>
+          <span class="legend__item"><span class="legend__dot legend__dot--busy"></span> Asignada</span>
+        </div>
+      </div>
+
+      <p id="statusMessage" class="status-message" role="status" aria-live="polite">
+        Hay 8 motocicletas disponibles.
+      </p>
+
+      <div id="horario" class="schedule" aria-label="Franjas horarias"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="motos-title">
+      <div class="panel__heading">
+        <div>
+          <p class="eyebrow">Estado de la flota</p>
+          <h2 id="motos-title">Motocicletas</h2>
+        </div>
+      </div>
+      <div id="motos" class="motorcycles" aria-label="Motocicletas de la flota"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Proyecto desarrollado con HTML, CSS y JavaScript.</p>
+  </footer>
+
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>
